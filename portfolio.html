@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kauan Silva | Portfólio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Configurações Personalizadas do Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        stone: {
+                            50: '#fafaf9',
+                            100: '#f5f5f4',
+                            200: '#e7e5e4',
+                            300: '#d6d3d1',
+                            400: '#a8a29e',
+                            500: '#78716c',
+                            600: '#57534e',
+                            800: '#292524',
+                            900: '#1c1917',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Ajustes finos de scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fafaf9; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d6d3d1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a8a29e; 
+        }
+        
+        .glass-nav {
+            background: rgba(250, 250, 249, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800 antialiased selection:bg-stone-200 selection:text-stone-900">
+
+    <!-- Header / Navigation -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-stone-200/50 transition-all duration-300" id="navbar">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="/portfolio.html" class="text-xl font-semibold tracking-tight text-stone-900 hover:opacity-70 transition">
+                KS.
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-stone-500">
+                <a href="#sobre" class="hover:text-stone-900 transition-colors">Sobre</a>
+                <a href="#timeline" class="hover:text-stone-900 transition-colors">Trajetória</a>
+                <a href="#projetos" class="hover:text-stone-900 transition-colors">Projetos</a>
+                <a href="#habilidades" class="hover:text-stone-900 transition-colors">Skills</a>
+                <a href="#contato" class="px-5 py-2 bg-stone-900 text-white rounded-full hover:bg-stone-700 transition-colors">Contato</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-stone-900 focus:outline-none">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-stone-50 border-b border-stone-200 px-6 py-4 absolute w-full left-0 top-20 shadow-lg">
+            <div class="flex flex-col space-y-4 text-center">
+                <a href="#sobre" class="text-stone-600 hover:text-stone-900 py-2 mobile-link">Sobre</a>
+                <a href="#timeline" class="text-stone-600 hover:text-stone-900 py-2 mobile-link">Trajetória</a>
+                <a href="#projetos" class="text-stone-600 hover:text-stone-900 py-2 mobile-link">Projetos</a>
+                <a href="#habilidades" class="text-stone-600 hover:text-stone-900 py-2 mobile-link">Skills</a>
+                <a href="#contato" class="text-stone-900 font-medium py-2 mobile-link">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center pt-20 relative overflow-hidden">
+        <div class="absolute -top-20 -right-20 w-96 h-96 bg-stone-200 rounded-full blur-3xl opacity-30"></div>
+        <div class="absolute top-40 -left-20 w-72 h-72 bg-stone-300 rounded-full blur-3xl opacity-20"></div>
+
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center w-full z-10">
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <span class="text-stone-500 font-medium tracking-wide uppercase text-xs mb-4 block">Portfólio 2026</span>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tighter text-stone-900 mb-6 leading-tight">
+                    Olá, eu sou <br> <span class="text-stone-500">Kauan Silva.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-stone-600 mb-8 max-w-md leading-relaxed">
+                    Desenvolvedor Full Stack | Estudante de Engenharia de Computação Desenvolvo soluções completas, desde automação até plataformas web escaláveis. Experiência com múltiplas linguagens e foco na arquitetura de sistemas eficientes.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#projetos" class="group px-7 py-3 bg-stone-900 text-white rounded-full font-medium transition-all hover:bg-stone-800 hover:scale-105 flex items-center gap-2">
+                        Ver Projetos
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#contato" class="px-7 py-3 border border-stone-300 text-stone-700 rounded-full font-medium transition-all hover:border-stone-900 hover:text-stone-900">
+                        Fale Comigo
+                    </a>
+                </div>
+            </div>
+            
+            <div class="relative flex justify-center md:justify-end" data-aos="fade-left" data-aos-duration="1000">
+                <div class="relative w-72 h-72 md:w-96 md:h-96">
+                    <div class="absolute inset-0 bg-stone-200 rounded-full rotate-6 transform transition-transform duration-500 hover:rotate-0"></div>
+                    <!-- Placeholder Profile Image -->
+                    <img src="/files/Imagem do WhatsApp de 2025-12-11 à(s) 17.42.50_dc2258fa.jpg" alt="Foto de Perfil" class="absolute inset-0 w-full h-full object-cover rounded-full shadow-2xl border-4 border-stone-50 grayscale hover:grayscale-0 transition-all duration-700">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-stone-400">
+            <i data-lucide="arrow-down" class="w-6 h-6"></i>
+        </div>
+    </section>
+
+    <!-- Sobre Mim -->
+    <section id="sobre" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-sm font-semibold text-stone-500 uppercase tracking-widest mb-2">Sobre</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-stone-900">Quem sou eu</h3>
+            </div>
+            
+            <div class="grid md:grid-cols-12 gap-12 items-start">
+                <div class="md:col-span-5 text-stone-500 leading-relaxed text-justify" data-aos="fade-up" data-aos-delay="100">
+                    <p class="mb-4">
+                        Desenvolvo soluções tecnológicas para projetos pessoais e profissionais, utilizando múltiplas linguagens e ferramentas modernas. Trabalho com JavaScript, HTML, CSS, Python e Next.js, sempre seguindo boas práticas de desenvolvimento e organização de código.
+                    </p>
+                    <p>
+                        Atualmente, meu foco está no desenvolvimento de sistemas de visão computacional utilizando OpenCV, explorando automação, análise de imagens e inteligência computacional.
+                    </p>
+                </div>
+                <div class="md:col-span-2 hidden md:flex justify-center items-center" data-aos="zoom-in">
+                    <div class="w-px h-full bg-stone-200"></div>
+                </div>
+                <div class="md:col-span-5" data-aos="fade-up" data-aos-delay="200">
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <div class="p-2 bg-stone-100 rounded-lg text-stone-800">
+                                <i data-lucide="code-2" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-stone-900">Desenvolvimento Limpo</h4>
+                                <p class="text-sm text-stone-500 mt-1">Código estruturado, performático e escalável.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="p-2 bg-stone-100 rounded-lg text-stone-800">
+                                <i data-lucide="layout" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-stone-900">Pixel Perfect</h4>
+                                <p class="text-sm text-stone-500 mt-1">Atenção minuciosa aos detalhes visuais.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline / Trajetória -->
+    <section id="timeline" class="py-24 bg-stone-50">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-sm font-semibold text-stone-500 uppercase tracking-widest mb-2">Trajetória</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-stone-900">Experiência & Educação</h3>
+            </div>
+
+            <div class="relative border-l border-stone-300 ml-4 md:ml-6 space-y-12">
+                <!-- Item 1 -->
+                <div class="relative pl-8 md:pl-12" data-aos="fade-up">
+                    <div class="absolute -left-[5px] top-2 w-3 h-3 bg-stone-900 rounded-full border border-stone-50"></div>
+                    <span class="text-xs font-semibold text-stone-400 uppercase tracking-wide">2022 - 2024</span>
+                    <h4 class="text-xl font-bold text-stone-900 mt-1">Técnico em Desenvolvimento de Sistemas</h4>
+                    <p class="text-sm font-medium text-stone-500 mb-2">EEEP. Dr Salomão.</p>
+                    <p class="text-stone-600 leading-relaxed">
+                        Técnico em Desenvolvimento de Sistemas, com experiência em projetos completos envolvendo front-end, back-end e bancos de dados.
+                    </p>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="relative pl-8 md:pl-12" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute -left-[5px] top-2 w-3 h-3 bg-stone-400 rounded-full border border-stone-50"></div>
+                    <span class="text-xs font-semibold text-stone-400 uppercase tracking-wide">2024 - 2024</span>
+                    <h4 class="text-xl font-bold text-stone-900 mt-1">Estágio acadêmico</h4>
+                    <p class="text-sm font-medium text-stone-500 mb-2">Focus Eleições</p>
+                    <p class="text-stone-600 leading-relaxed">
+                        Desenvolvimento de sistema de filtragem de dados eleitorais por candidatos, com uso de Python (Pandas) e Firebase, além de participação em reuniões de alinhamento e definição de pautas.
+                    </p>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="relative pl-8 md:pl-12" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute -left-[5px] top-2 w-3 h-3 bg-stone-300 rounded-full border border-stone-50"></div>
+                    <span class="text-xs font-semibold text-stone-400 uppercase tracking-wide">2025 - Presente</span>
+                    <h4 class="text-xl font-bold text-stone-900 mt-1">Bacharelado em Engenharia de Computação</h4>
+                    <p class="text-sm font-medium text-stone-500 mb-2">( UNILAB ) Universidade Federal</p>
+                    <p class="text-stone-600 leading-relaxed">
+                        Foco no desenvolvimento e integração de software e hardware, com ênfase em sistemas computacionais, arquitetura e soluções tecnológicas.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="habilidades" class="py-20 bg-white border-t border-stone-100">
+        <div class="max-w-5xl mx-auto px-6">
+             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                 <div class="p-6 rounded-xl hover:bg-stone-50 transition-colors duration-300" data-aos="fade-up" data-aos-delay="0">
+                     <i data-lucide="layout-template" class="w-8 h-8 mx-auto text-stone-800 mb-3"></i>
+                     <h4 class="font-bold text-stone-900">Frontend</h4>
+                     <p class="text-sm text-stone-500 mt-1">React, Bootstrap, Tailwind</p>
+                 </div>
+                 <div class="p-6 rounded-xl hover:bg-stone-50 transition-colors duration-300" data-aos="fade-up" data-aos-delay="100">
+                     <i data-lucide="server" class="w-8 h-8 mx-auto text-stone-800 mb-3"></i>
+                     <h4 class="font-bold text-stone-900">Backend</h4>
+                     <p class="text-sm text-stone-500 mt-1">Node.js, Python, SQL</p>
+                 </div>
+                 <div class="p-6 rounded-xl hover:bg-stone-50 transition-colors duration-300" data-aos="fade-up" data-aos-delay="200">
+                     <i data-lucide="database" class="w-8 h-8 mx-auto text-stone-800 mb-3"></i>
+                     <h4 class="font-bold text-stone-900">Banco de Dados</h4>
+                     <p class="text-sm text-stone-500 mt-1">Firebase, PostgreSQL</p>
+                 </div>
+                 <div class="p-6 rounded-xl hover:bg-stone-50 transition-colors duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <i data-lucide="wrench" class="w-8 h-8 mx-auto text-stone-800 mb-3"></i>
+                    <h4 class="font-bold text-stone-900">Ferramentas</h4>
+                    <p class="text-sm text-stone-500 mt-1">Git, Flutter, OpenCV</p>
+                </div>
+             </div>
+        </div>
+    </section>
+
+    <!-- Projetos -->
+    <section id="projetos" class="py-24 bg-stone-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16" data-aos="fade-up">
+                <div>
+                    <h2 class="text-sm font-semibold text-stone-500 uppercase tracking-widest mb-2">Portfólio</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-stone-900">Projetos Selecionados</h3>
+                </div>
+                <a href="https://github.com/KauanSilvaz" class="hidden md:flex items-center gap-2 text-stone-600 hover:text-stone-900 font-medium transition-colors mt-4 md:mt-0">
+                    Ver GitHub <i data-lucide="github" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <article class="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="0">
+                    <div class="aspect-video overflow-hidden relative bg-stone-900">
+                        <div class="absolute inset-0 bg-stone-900 opacity-0 group-hover:opacity-10 transition-opacity z-10"></div>
+                        <img src="/files/pr3.png" alt="Projeto 1" class="w-full h-full object-contain object-top transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-stone-400 mb-2 block">Dashboard</span>
+                        <h4 class="text-xl font-bold text-stone-900 mb-2 group-hover:text-stone-600 transition-colors">Analise de Votos</h4>
+                        <p class="text-stone-500 text-sm mb-4 line-clamp-4">Sistema de análise de votos desenvolvido em 2024, com back-end em Python, integrando Firebase e suporte à alimentação direta via API de dados do TSE.</p>
+                        <a href="#contato" class="inline-flex items-center text-sm font-semibold text-stone-900 hover:text-stone-500 transition-colors">
+                            Saiba mais <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="150">
+                    <div class="aspect-video overflow-hidden relative bg-stone-900">
+                        <div class="absolute inset-0 bg-stone-900 opacity-0 group-hover:opacity-10 transition-opacity z-10"></div>
+                        <img src="/files/pr2.png" alt="Projeto 2" class="w-full h-full object-contain object-top transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-stone-400 mb-2 block">App Python</span>
+                        <h4 class="text-xl font-bold text-stone-900 mb-2 group-hover:text-stone-600 transition-colors">Frequência Escolar</h4>
+                        <p class="text-stone-500 text-sm mb-4 line-clamp-4">Painel de controle de frequência escolar em Python, geração de dados individuais por estudante e exportação de relatórios para o núcleo docente.</p>
+                        <a href="#contato" class="inline-flex items-center text-sm font-semibold text-stone-900 hover:text-stone-500 transition-colors">
+                            Saiba mais <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+                    <div class="aspect-video overflow-hidden relative bg-stone-900">
+                        <div class="absolute inset-0 bg-stone-900 opacity-0 group-hover:opacity-10 transition-opacity z-10"></div>
+                        <img src="/files/pr1.png" alt="Projeto 3" class="w-full h-full object-contain object-top transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-stone-400 mb-2 block">Landing page</span>
+                        <h4 class="text-xl font-bold text-stone-900 mb-2 group-hover:text-stone-600 transition-colors">Agendamentos Barbearia</h4>
+                        <p class="text-stone-500 text-sm mb-4 line-clamp-4">Landing page para barbearia desenvolvida com HTML, CSS, JavaScript e Node.js. Exibição de preços e agendamento de atendimentos integrado ao Firebase.</p>
+                        <a href="#contato" class="inline-flex items-center text-sm font-semibold text-stone-900 hover:text-stone-500 transition-colors">
+                            Saiba mais <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="mt-8 text-center md:hidden">
+                <a href="https://github.com/KauanSilvaz" class="inline-flex items-center gap-2 text-stone-600 hover:text-stone-900 font-medium transition-colors">
+                    Ver GitHub <i data-lucide="github" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="bg-stone-50 rounded-2xl p-8 md:p-16 relative overflow-hidden" data-aos="zoom-in">
+                <!-- Decorative Circle -->
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-stone-200 rounded-full blur-2xl opacity-50"></div>
+
+                <div class="grid md:grid-cols-2 gap-12 relative z-10">
+                    <div>
+                        <h3 class="text-3xl font-bold text-stone-900 mb-4">Vamos criar algo incrível juntos?</h3>
+                        <p class="text-stone-500 mb-8">Estou disponível para novos projetos e colaborações. Sinta-se à vontade para me enviar uma mensagem.</p>
+                        
+                        <div class="space-y-4">
+                            <a href="mailto:kauansilvadesouza4@gmail.com" class="flex items-center gap-3 text-stone-700 hover:text-stone-900 transition-colors">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                                kauansilvadesouza4@gmail.com
+                            </a>
+                            <a href="https://www.linkedin.com/in/kauan-silva-dev/" class="flex items-center gap-3 text-stone-700 hover:text-stone-900 transition-colors">
+                                <i data-lucide="linkedin" class="w-5 h-5"></i>
+                                Kauan Silva
+                            </a>
+                            <a href="https://www.instagram.com/kauan.souza.__?igsh=MXh5dWJtbzU2ejA3dg==" class="flex items-center gap-3 text-stone-700 hover:text-stone-900 transition-colors">
+                                <i data-lucide="instagram" class="w-5 h-5"></i>
+                                @kauan.souza.__
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="tech-mark">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<style>
+.tech-mark {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 85px;
+  height: 210px;
+  margin: 40px 0;
+}
+
+.tech-mark span {
+  width: 4px;
+  background: #e5e7eb; /* branco puxado pro cinza */
+  border-radius: 4px;
+}
+
+/* linhas assimétricas */
+.tech-mark span:nth-child(1) {
+  height: 230px;
+}
+
+.tech-mark span:nth-child(2) {
+  height: 180px;
+}
+
+.tech-mark span:nth-child(3) {
+  height: 130px;
+}
+</style>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-50 py-12 border-t border-stone-200">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <span class="text-lg font-bold text-stone-900">KS.</span>
+                <p class="text-sm text-stone-400 mt-1">&copy; 2026 Kauan Silva. Todos os direitos reservados.</p>
+            </div>
+            
+            <div class="flex gap-6">
+    <a href="https://github.com/KauanSilvaz"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="GitHub"
+       class="text-stone-400 hover:text-stone-900 transition-colors">
+        <i data-lucide="github" class="w-5 h-5"></i>
+    </a>
+
+    <a href="https://www.linkedin.com/in/kauan-silva-dev/"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="LinkedIn"
+       class="text-stone-400 hover:text-stone-900 transition-colors">
+        <i data-lucide="linkedin" class="w-5 h-5"></i>
+    </a>
+
+    <a href="https://www.instagram.com/kauan.souza.__?igsh=MXh5dWJtbzU2ejA3dg=="
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Instagram"
+       class="text-stone-400 hover:text-stone-900 transition-colors">
+        <i data-lucide="instagram" class="w-5 h-5"></i>
+    </a>
+</div>
+
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Inicializar ícones
+        lucide.createIcons();
+
+        // Inicializar animações AOS
+        AOS.init({
+            once: true, // animar apenas uma vez
+            offset: 50, // offset (em px) do elemento original
+            duration: 800, // duração da animação
+            easing: 'ease-out-cubic', // curva de easing
+        });
+
+        // Lógica do Menu Mobile
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const links = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Fechar menu ao clicar em um link
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Navbar Shadow on Scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-sm');
+                navbar.classList.add('bg-stone-50/95');
+            } else {
+                navbar.classList.remove('shadow-sm');
+                navbar.classList.remove('bg-stone-50/95');
+            }
+        });
+    </script>
+</body>
+</html>
